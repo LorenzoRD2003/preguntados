@@ -1,2 +1,0 @@
-# preguntados
-Proyecto de colegio
