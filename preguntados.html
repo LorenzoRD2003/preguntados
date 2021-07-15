@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Preguntados</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </head>
+    <body class="container" style="background-image: url('Images/fondo.jpeg')">
+        <div class="shadow p-4 mt-4 mb-5 bg-warning rounded-pill">
+            <h1 class="text-center">Preguntados</h1>
+        </div>
+
+        <div id="paginaPrincipal">
+            <div class="row m-auto">
+                <div class="col-sm-8 mx-auto">
+                    <img class="img-fluid rounded-pill" src="Images/Preguntados.png" alt="Imagen juego Preguntados">
+                </div>
+            </div>
+
+            <div class="shadow p-5 m-5 bg-light rounded-pill">
+                <div class="row">
+                    <div class="col-sm-4 mx-auto">
+                        <button class="w-100 btn btn-success btn-lg" onclick="irPaginaInstrucciones()">Instrucciones</button>
+                    </div>
+                    <div class="col-sm-4 mx-auto">
+                        <button class="w-100 btn btn-primary btn-lg" onclick="irPaginaPedirDatos()">Jugar</button>
+                    </div>
+                    <div class="col-sm-4 mx-auto">
+                        <button class="w-100 btn btn-secondary btn-lg" onclick="irPaginaPuntuaciones()">Mejores puntuaciones</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="paginaInstrucciones">
+            <div class="shadow px-5 py-2 mt-4 mb-5 bg-light rounded-pill">
+                <h2 class="mt-3 text-center">Instrucciones</h2>
+                <ul class="list-group m-5">
+                    <li class="list-group-item">El juego consiste en responder diez preguntas de opción múltiple.</li>
+                    <li class="list-group-item">Cada una de las preguntas pertenece a una categoría específica.</li>
+                    <li class="list-group-item">Las preguntas son elegidas al azar.</li>
+                    <li class="list-group-item">Hay un límite de tiempo de entre 30 segundos para cada pregunta.</li>
+                </ul>
+            </div>
+
+            <div class="col-sm-4 mx-auto">
+                <button class="w-100 btn btn-primary btn-lg" onclick="volverPaginaInstrucciones()">Volver</button>
+            </div>
+
+            <p class="mt-4 text-center"><strong>Grupo de proyecto:</strong> Santiago Manzanares, Tomás Molezzi, Lorenzo Ruiz Díaz, Nicolás Serafini</p>
+        </div>
+
+        <div id="paginaPedirDatos">
+            <div class="shadow p-5 m-5 bg-light rounded-pill">
+                <div class="row">
+                    <div class="col-sm-4 mx-auto">
+                        <label class="font-weight-bold" for="pedirNombreUsuario">Ingrese su nombre: </label>
+                        <input class="form-control input-lg" type="text" name="pedirNombreUsuario" id="pedirNombreUsuario">
+                    </div>
+                </div>
+    
+                <div class="row mt-5">
+                    <div class="col-sm-4 mx-auto">
+                        <button class="w-100 btn btn-primary btn-lg" onclick="comenzarPartida()">¡Comenzar la partida!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="paginaPuntuaciones">
+            <div class="shadow px-5 py-2 mt-4 mb-5 bg-light rounded-pill">
+                <h2 class="mt-3 text-center">Mejores puntuaciones</h2>
+                <ul id="mejoresPuntuaciones" class="list-group m-5">
+                    <!-- Aca van a ir las mejores puntuaciones -->
+                </ul>
+            </div>
+
+            <div class="col-sm-4 mx-auto">
+                <button class="w-100 btn btn-primary btn-lg" onclick="volverPaginaPuntuaciones()">Volver</button>
+            </div>
+        </div>
+        
+        <div id="paginaJuego">
+            <div class="shadow p-4 mx-5 bg-primary rounded-top border">
+                <div class="row">
+                    <div class="col-sm-9">
+                        <h2 id="textoCategoria">Categoría: </h2>
+                        <!-- Categoria -->
+                    </div>
+                    <div id="lugarTiempo" class="col-sm-3">
+                        <h2>Tiempo:</h2>
+                        <!-- Tiempo -->
+                    </div>
+                </div>
+            </div>
+            <div class="shadow p-4 mx-5 bg-info rounded-bottom border">
+                <div id="lugarPregunta">
+                    <!-- Pregunta -->
+                </div>
+
+                <ul class="mt-5" id="opcionesRespuesta">
+                    <!-- Opciones de respuesta -->
+                </ul>
+            </div>
+        </div>
+
+        <script type="module" src="funcionesDOM.js"></script>
+    </body>
+</html>
